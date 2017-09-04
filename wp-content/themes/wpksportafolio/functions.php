@@ -87,22 +87,6 @@ function html5blank_nav()
 	);
 }
 
-// Load HTML5 Blank scripts (header.php)
-function html5blank_header_scripts()
-{
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
-
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
-
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
-
-    }
-}
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
@@ -341,7 +325,7 @@ function html5blankcomments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
@@ -497,90 +481,5 @@ function admin_styles() {
   );
 }
 add_action('login_enqueue_scripts', 'admin_styles', 10 );
-
-
-function updatePost($post_id){
-    global $post; 
-    $id_post = $post->ID;
-    if ($post->post_type == 'html5-blank') {
-        $params = array(
-                'id' => $id_post,
-                'title' => 'Proximas ediciones',
-            );
-        $post = new WP_PostMeta($params);
-        $post->updatePost();
-    }   
-
-}
-
-add_action( 'save_post', 'updatePost');
-
-/*
-function before_send_mail( $wpcf7 ) {
-
-    $title = $contact_form->title;
-    $submission = WPCF7_Submission::get_instance();
-    
-    if ( $contact_form->id() == 52 ) {
-       $params = array(
-            'id' => 1,
-            'title' => 'Update con wordpress menor',
-        );
-       $post = new WP_PostMeta($params);
-       $post->updatePost();
-    }
-}
-
-add_action( 'wpcf7_before_send_mail', 'before_send_mail' );
-*/
-
-/**
-* Update post
-*/
-
-class WP_PostMeta
-{
-    public $params = array();
-    
-
-    function __construct($params)
-    {
-        global $wpdb;
-        $this->db = $wpdb;
-        $this->params = $params;
-    }
-
-
-    function getPost(){
-        /*
-        print_r($this->params);
-        echo 'entro con id-> '. $this->id_post;
-        $query = $this->db->get_results( 
-                 'SELECT * 
-                    FROM wp_'.$db->prefix . 'posts
-                   WHERE ID = '.$this->id_post.'' 
-            );
-        
-        echo '<pre>';
-        print_r($query);
-        echo '</pre>';
-        exit();
-        */
-    }
-
-    function updatePost(){        
-        $query = $this->db->update( 
-            'wp_posts', 
-            array( // columnas de las tablas
-                'post_title' => $this->params['title']
-            ), 
-            array( // where
-                'ID' => $this->params['id'] 
-            ), 
-            array('%s'), // formato de las columnas
-            array( '%d' ) // formato del where
-        );
-    }
-}
 
 ?>

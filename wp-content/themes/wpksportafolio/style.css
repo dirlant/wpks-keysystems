@@ -1,0 +1,18 @@
+/*
+	Theme Name: Portafolio
+	Theme URI: http://paginaswebks.com
+	Description: Utilizado para empresas que quieren mostrar portafolio
+	Version: 1.4.3
+	Author: Diego Carciente
+	Author URI: https://twitter.com/diegocarcientec
+	Tags: Paginas, Portafolio, Marketing, Diseño
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+a > i{
+	color: #FFFFFF;
+}
+a > i:hover {
+	color: #09355C;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
+	<head>
+		<meta charset="<?php bloginfo('charset'); ?>">
+		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+    <link href="<?php echo get_template_directory_uri()?>/html_template/img/Key-Systems-Mini-Logo.png" rel="shortcut icon">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="<?php bloginfo('description'); ?>">
+
+		<?php wp_head(); ?>
+
+    <title>Diseño Web KS</title>
+    <link rel="icon" href="<?php echo get_template_directory_uri()?>/html_template/img/Key-Systems-Mini-Logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo get_template_directory_uri()?>/html_template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="<?php echo get_template_directory_uri()?>/html_template/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    
+
+    <!-- Custom styles for this template -->
+    <link href="<?php echo get_template_directory_uri()?>/html_template/css/landing-page.css" rel="stylesheet">
+
+    <!-- Style -->
+    <link href="<?php echo get_template_directory_uri()?>/html_template/css/style.css" rel="stylesheet">
+    
+    
+
+    <!-- Custom styles for WordPress implementation -->
+    <link href="<?php echo get_template_directory_uri()?>/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-nav-KS navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri()?>/html_template/img/Key-Systems-Mini-Logo.png" width="30"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#estilo">ESTILOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nuestro-trabajo">NUESTRO TRABAJO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portafolio">PORTAFOLIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#temas">TEMAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quienes-somos">QUIENES SOMOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pensamientos">PENSAMIENTOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#importancia">IMPORTANCIA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header
+    <header class="intro-header">
+      <div class="container">
+        <div class="intro-message">
+          <h1>Landing Page</h1>
+          <h3>A Template by Start Bootstrap</h3>
+          <hr class="intro-divider">
+          <ul class="list-inline intro-social-buttons">
+            <li class="list-inline-item">
+              <a href="#" class="btn btn-secondary btn-lg">
+                <i class="fa fa-twitter fa-fw"></i>
+                <span class="network-name">Twitter</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn btn-secondary btn-lg">
+                <i class="fa fa-github fa-fw"></i>
+                <span class="network-name">Github</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn btn-secondary btn-lg">
+                <i class="fa fa-linkedin fa-fw"></i>
+                <span class="network-name">Linkedin</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header> -->
