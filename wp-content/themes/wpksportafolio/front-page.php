@@ -21,12 +21,12 @@
       <!-- /.container -->
     </section>
 
-    <section id="estilo" class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+    <section  id="estilo"   class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-12 mr-auto">
+          <div class="col-lg-12 ml-auto">
             <div class="clearfix"></div>
             <h2 class="section-heading">Estilos</h2>
             <hr class="section-heading-spacer">
@@ -39,12 +39,15 @@
         <div class="row p-t-100 justify-content-md-center">
           <div class="col-lg-4 center">
             <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/desktop.png" alt="">
+            <h2 class="section-heading p-t-50">Desktop</h2>
           </div>
           <div class="col-lg-3 center">
             <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/tablet.png" alt="">
+            <h2 class="section-heading p-t-50">tablet</h2>
           </div>
           <div class="col-lg-2 center">
-            <img class="img-fluid " src="<?php echo get_template_directory_uri()?>/html_template/img/mobil.png" alt="">
+            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/mobil.png" alt="">
+            <h2 class="section-heading p-t-50">Móvil</h2>
           </div>
         </div>
 
@@ -58,7 +61,7 @@
       <div class="content-section-b2">
         <div class="container p-t-b-70">
           <div class="row">
-            <div class="col-lg-11 ml-auto">
+            <div class="col-lg-12 ml-auto">
               <div class="clearfix"></div>
               <h2 class="section-heading white">Nuestro trabajo</h2>
               <hr class="section-heading-spacer-2">
@@ -70,6 +73,7 @@
       <div>
     </section>
     <!-- /.content-section-a -->
+
 
     <section id="portafolio" class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
       <div class="container">
@@ -116,6 +120,8 @@
       </div>
     </section>
 
+
+
     <section id="temas" class="content-section-b" >
       <div class="container">
         <div class="row">
@@ -140,7 +146,9 @@
       </div>
     </section> 
 
-    <section id="quienes-somos" class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+
+
+    <section  id="quienes-somos"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
       <div class="container">
 
@@ -170,7 +178,7 @@
 
     </section>
 
-    <section id="pensamientos" class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa3.png');">
+    <section  id="pensamientos"  class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa3.png');">
       <div class="content-section-b2">
         <div class="container p-t-b-70">
           <div class="row">
@@ -181,7 +189,7 @@
               <br><br>
               <div class="row">
                 <div class="col-lg-1">
-                  <img class="img-responsive" src="<?php echo get_template_directory_uri()?>/html_template/img/globo.png" width="250">
+                  <img class="img-responsive" src="<?php echo get_template_directory_uri()?>/html_template/img/globo.png">
                 </div>
                 <div class="col-lg-10">
                   <p class="lead white">Observa, escucha y aprende. No puedes saberlo todo. Todo el que piensa que lo sabe todo está destinado a la mediocridad</p>
@@ -194,15 +202,15 @@
       <div>
     </section>
 
-    <section id="importancia" class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+    <section  id="importancia"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-4 center">
+          <div class="col-lg-3 center">
             <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/iphone-png-14.png" alt="">
           </div>
-          <div class="col-lg-8 mr-auto">
+          <div class="col-lg-9 mr-auto">
             <div class="clearfix"></div>
             <h2 class="section-heading">Importancia de una web</h2>
             <hr class="section-heading-spacer">
@@ -254,19 +262,5 @@
       </div>
     </section>
 
-    <aside class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mr-auto center">
-            <div class="clearfix"></div>
-            <img class="img-responsive" src="<?php echo get_template_directory_uri()?>/html_template/img/ks.png">
-            <hr class="section-heading-spacer-4">
-            <div class="f-s-25">              
-              <a href="https://www.instagram.com/keysystemsca/"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <!-- /.banner -->
+
 <?php get_footer(); ?>

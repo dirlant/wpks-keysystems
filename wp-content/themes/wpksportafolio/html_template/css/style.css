@@ -1,11 +1,14 @@
 body{
     background: #EBEBEB;
 }
+ul{
+    list-style:none;
+}
 .white{
     color: #fff;
 }
 .bg-nav-KS {
-    background-color: rgba(9,53,92,0.8)!important;
+    background-color:transparent!important; /*rgba(9,53,92,0.8)!important;*/
 }
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
@@ -42,7 +45,7 @@ a:hover{
     background: linear-gradient(to bottom,#EBEBEB 74%,#C4C4CE );
 }
 .content-section-b {
-    padding: 75px 0;
+    padding: 50px 0;
     background: #EBEBEB;
 }
 
@@ -102,3 +105,36 @@ footer {
     color: #fff;
 }
 
+.cd-stretchy-nav {
+    position: fixed;
+    z-index: 2;
+    top: 40px;
+    right: 5%;
+    pointer-events: none;
+}
+
+.cd-stretchy-nav .stretchy-nav-bg {
+  /* this is the stretching navigation background */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background:rgba(9,53,92,0.8)!important;
+  box-shadow: 0 1px 4px transparent;
+  -webkit-transition: height 0.2s, box-shadow 0.2s;
+  -moz-transition: height 0.2s, box-shadow 0.2s;
+  transition: height 0.2s, box-shadow 0.2s;
+}
+.cd-stretchy-nav ul a {
+    color: #212121;
+}
+.icon-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    color: #fff;
+}

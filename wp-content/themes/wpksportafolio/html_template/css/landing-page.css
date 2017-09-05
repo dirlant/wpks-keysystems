@@ -88,8 +88,8 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .section-heading {
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-transform: uppercase;  
 }
 
 .section-heading-spacer {

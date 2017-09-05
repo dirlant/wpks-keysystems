@@ -22,15 +22,12 @@
     <link href="<?php echo get_template_directory_uri()?>/html_template/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    
-
     <!-- Custom styles for this template -->
     <link href="<?php echo get_template_directory_uri()?>/html_template/css/landing-page.css" rel="stylesheet">
 
     <!-- Style -->
+    <link href="<?php echo get_template_directory_uri()?>/html_template/css/cd.css" rel="stylesheet">
     <link href="<?php echo get_template_directory_uri()?>/html_template/css/style.css" rel="stylesheet">
-    
-    
 
     <!-- Custom styles for WordPress implementation -->
     <link href="<?php echo get_template_directory_uri()?>/style.css" rel="stylesheet">
@@ -38,47 +35,60 @@
 
   <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-nav-KS navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="<?php echo get_home_url() ?>"><img src="<?php echo get_template_directory_uri()?>/html_template/img/Key-Systems-Mini-Logo.png" width="30"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#inicio">INICIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#estilo">ESTILOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#nuestro-trabajo">NUESTRO TRABAJO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portafolio">PORTAFOLIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#temas">TEMAS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#quienes-somos">QUIENES SOMOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pensamientos">PENSAMIENTOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#importancia">IMPORTANCIA</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">CONTACTO</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
+		<nav class="cd-stretchy-nav">
+      <a class="cd-nav-trigger" href="#0">
+        <span aria-hidden="true"></span>
+      </a>
+      <ul>
+        <li>
+        	<a href="#inicio">
+        		<span class="icon-menu"><i class="fa fa-home" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#estilo">
+        		<span class="icon-menu"><i class="fa fa-laptop" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#nuestro-trabajo">
+        		<span class="icon-menu"><i class="fa fa-trophy" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#portafolio">
+        		<span class="icon-menu"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#temas">
+        		<span class="icon-menu"><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#quienes-somos">
+        		<span class="icon-menu"><i class="fa fa-venus-mars" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#pensamientos">
+        		<span class="icon-menu"><i class="fa fa-quote-right" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#importancia">
+        		<span class="icon-menu"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+        <li>
+        	<a href="#contacto">
+        		<span class="icon-menu"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+        	</a>
+        </li>
+      </ul>
+      <span aria-hidden="true" class="stretchy-nav-bg"></span>
+    </nav>
     <!-- Header
     <header class="intro-header">
       <div class="container">

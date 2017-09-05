@@ -16,3 +16,6 @@ a > i{
 a > i:hover {
 	color: #09355C;
 }
+.fa {
+	padding-right: 2.5px;
+}
