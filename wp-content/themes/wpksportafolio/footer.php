@@ -17,10 +17,10 @@
 
     <!-- Footer -->
     <footer>
-     <div class="container">
+      <div class="container">    
         <div class="row">
           <div class="col-lg-12 mr-auto center">
-            <p>Desarrollado por Key Systems C.A ©</p>
+            <p >Diseñado y Desarrollado por nosotros mismos <span class="fa fa-wordpress"></i></span></p>
           </div>
         </div>
       </div>
