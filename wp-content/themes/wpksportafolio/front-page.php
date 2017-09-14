@@ -1,80 +1,132 @@
 <?php get_header(); ?>
 
     <!-- Page Content -->
-    <section id="inicio" class="content-section-a">
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 96,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
 
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 ml-auto">
-            <div class="clearfix"></div>
-            <h1 class="section-heading">Diseño personalizado y creativo</h1>
-            <hr class="section-heading-spacer">
-            <br><br>
-            <p class="lead">Te garantizamos un diseño único, completamente personalizado, creativo y diseñado para las diferentes resoluciones, logra llegar a cualquier lugar en cualquier momento. Nosotros te ayudaremos!</p>
-          </div>
-          <div class="col-lg-8 mr-auto">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/capa1.png" alt="">
+      $query = new WP_Query( $args );
+    ?>        
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php 
+        global $post;
+        $thumbID = get_post_thumbnail_id( $post->ID );
+        $url_img = wp_get_attachment_url( $thumbID );              
+      ?>
+      <section id="inicio">            
+        <div class="container">
+          <div class="row">            
+            <div class="col-lg-4 ml-auto">
+              <div class="clearfix"></div>  lass="content-section-a"
+              <h1 class="section-heading"><?php echo $post->post_title ?></h1>
+              <hr class="section-heading-spacer">
+              <br><br>
+              <p class="lead"><?php echo $post->post_content ?></p>
+            </div>
+            <div class="col-lg-8 mr-auto">
+              <img class="img-fluid" src="<?php echo $url_img ?>" alt="">
+            </div>          
           </div>
         </div>
+      </section>
+    <?php endwhile; wp_reset_postdata(); ?>
 
+
+    <section class="container">
+      <br>
+      <div class="row justify-content-md-center">
+        <p class="lead">Descarga tu primera <b>Página  Web</b> completamnte <b>GRATIS!</b> el enlace llegará a tu correo</p>
+        
+        <div class="col-lg-10 ">
+          <?php echo do_shortcode('[contact-form-7 id="59" title="Descarga de tema"]' ); ?>
+        </div>
       </div>
-      <!-- /.container -->
     </section>
 
-    <section  id="estilo"   class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
-      <div class="container">
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 100,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
 
-        <div class="row">
-          <div class="col-lg-12 ml-auto">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Estilos</h2>
-            <hr class="section-heading-spacer">
-            <br><br>
-            <p class="lead">
-              Nos enfocamos en hacer desarrollos adaptables, además de eso hacemos desarrollos a la medida, es decir, que su página web tendra un comportamiento diferente entre la web, tablet y móvil, logrando así mayor versatilidad, elegancia, velocidad de carga y muchos otros factores que marcan la diferencia en el diseño de una página web
-            </p>
-          </div>
-        </div>
-        <div class="row p-t-100 justify-content-md-center">
-          <div class="col-lg-4 center">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/desktop.png" alt="">
-            <h2 class="section-heading p-t-50">Desktop</h2>
-          </div>
-          <div class="col-lg-3 center">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/tablet.png" alt="">
-            <h2 class="section-heading p-t-50">tablet</h2>
-          </div>
-          <div class="col-lg-2 center">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/mobil.png" alt="">
-            <h2 class="section-heading p-t-50">Móvil</h2>
-          </div>
-        </div>
+      $query = new WP_Query( $args );
+    ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+    <?php 
+      global $post;
+      $thumbID = get_post_thumbnail_id( $post->ID );
+      $url_img = wp_get_attachment_url( $thumbID );              
+    ?>
+      <section  id="estilo"   class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
-      </div>
-      <!-- /.container -->
-
-    </section>
-    <!-- /.content-section-b -->
-
-    <section id="nuestro-trabajo" class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa2.png');">
-      <div class="content-section-b2">
-        <div class="container p-t-b-70">
-          <div class="row">
+        <div class="container">
+          <div class="row">          
             <div class="col-lg-12 ml-auto">
               <div class="clearfix"></div>
-              <h2 class="section-heading white">Nuestro trabajo</h2>
-              <hr class="section-heading-spacer-2">
+              <h2 class="section-heading"><?php echo $post->post_title ?></h2>
+              <hr class="section-heading-spacer">
               <br><br>
-              <p class="lead white">Aquí podrá visualizar gran parte de nuestro trabajo de páginas web realizados con pasión, dedicación gracias a la gran cantidad de clientes que han confiado en nosotros. Brindando la asesoría necesaria para que usted y su proyecto salgan adelante con una cara profesional al mercado.</p>
+              <p class="lead">
+                <?php echo $post->post_content ?>
+              </p>
+            </div>                         
+          </div>
+          <div class="row p-t-100 justify-content-md-center">
+            <div class="col-lg-4 center">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/desktop.png" alt="">
+              <h2 class="section-heading p-t-50">Desktop</h2>
+            </div>
+            <div class="col-lg-3 center">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/tablet.png" alt="">
+              <h2 class="section-heading p-t-50">tablet</h2>
+            </div>
+            <div class="col-lg-2 center">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/mobil.png" alt="">
+              <h2 class="section-heading p-t-50">Móvil</h2>
             </div>
           </div>
         </div>
-      <div>
-    </section>
+      </section>
+    <?php endwhile; wp_reset_postdata(); ?>
+    <!-- /.content-section-b -->
+
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 101,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
+
+      $query = new WP_Query( $args );
+    ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <section id="nuestro-trabajo" class="content-section-b2" style="background: url(<?php echo get_field('imagen') ?>);">
+        <div class="content-section-b2">
+          <div class="container p-t-b-70">
+            <div class="row">
+              <div class="col-lg-12 ml-auto">
+                <div class="clearfix"></div>
+                <h2 class="section-heading white"><?php echo $post->post_title ?></h2>
+                <hr class="section-heading-spacer-2">
+                <br><br>
+                <p class="lead white"><?php echo $post->post_content ?></p>
+              </div>
+            </div>
+          </div>
+        <div>
+      </section>
+    <?php endwhile; wp_reset_postdata(); ?>
     <!-- /.content-section-a -->
 
-
+    
     <section id="portafolio" class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
       <div class="container">
         <!--
@@ -85,98 +137,189 @@
         </div>
         -->
         <br><br>
+        <?php 
+          $args = array(      
+            //Type & Status Parameters
+            'p' => 103,
+            'post_type'   => 'landing',
+            'post_status' => 'publish',      
+          );
+
+          $query = new WP_Query( $args );
+        ?>
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="row">
           <div class="col-lg-12 mr-auto center">
-            <h2 class="section-heading">Portafolio</h2>
+            <h2 class="section-heading"><?php echo $post->post_title ?></h2>
             <hr class="section-heading-spacer-3">
             <br>
             <p class="lead">
-            Disfruta de los trabajos realizados por nuestro equipo.
+              <?php echo $post->post_content ?>
             </p>
           </div>
         </div>
-        <div class="row p-t-b-30">        
-          <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/1.jpg">
-          </div>
-           <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/2.jpg">
-          </div>
-           <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/3.jpg">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/4.jpg">
-          </div>
-           <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/5.jpg">
-          </div>
-           <div class="col-md-4 center hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/6.jpg">
-          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+
+        <div class="row p-t-b-30">
+          <?php 
+            $args = array(      
+              //Type & Status Parameters
+              'post_type'   => 'portafolio',
+              'post_status' => 'publish',          
+              //Order & Orderby Parameters
+              'orderby' => 'date'         
+            );
+      
+            $query = new WP_Query( $args );
+          ?>       
+
+          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+            <?php 
+              // Ruta de la imagen destacada (tamaño completo)
+              global $post;
+              $thumbID = get_post_thumbnail_id( $post->ID );
+              $url_img = wp_get_attachment_url( $thumbID );
+              
+            ?>
+            <div class="col-md-4 center hover01" style="margin-top: 25px;">
+              <a href="<?php echo get_field('url') ?>" target="_blank">
+                <img class="img-responsive b-r-4" src="<?php echo $url_img ?>">
+              </a>
+            </div>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
     </section>
+
 
 
 
     <section id="temas" class="content-section-b" >
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 mr-auto center">
-            <h2 class="section-heading">Páginas autoadministrables</h2>
-            <hr class="section-heading-spacer-3">
-            <br>
-            <p class="lead">
-            Ahora podrás tener tu propia página web en pocas horas, con un único pago y completamente modificable y contarás con nuestro soporte durante 3 meses luego de realizar tu compra. Puedes enviarnos tu solicitud a través del formulario de contacto y recibirás el enlace correspondiente para la compra.
-            </p>
-          </div>
+          <?php 
+            $args = array(      
+              //Type & Status Parameters
+              'p' => 104,
+              'post_type'   => 'landing',
+              'post_status' => 'publish',      
+            );
+
+            $query = new WP_Query( $args );
+          ?>
+          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div class="col-lg-12 mr-auto center">
+              <h2 class="section-heading"><?php echo $post->post_title ?></h2>
+              <hr class="section-heading-spacer-3">
+              <br>
+              <p class="lead">
+                <?php echo $post->post_content ?> 
+              </p>
+            </div>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
         <br><br>
         <div class="row">
-          <div class="col-md-6 right hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/7.jpg">
-          </div>
-           <div class="col-md-6 left hover01">
-            <img class="img-responsive b-r-4" src="<?php echo get_template_directory_uri()?>/html_template/img/gallery/8.jpg">
-          </div>
+          <?php 
+            $args = array(      
+              //Type & Status Parameters
+              'post_type'   => 'temas',
+              'post_status' => 'publish',          
+              //Order & Orderby Parameters
+              'orderby' => 'date'         
+            );
+      
+            $query = new WP_Query( $args );
+          ?>       
+
+          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+            <?php 
+              // Ruta de la imagen destacada (tamaño completo)
+              global $post;
+              $thumbID = get_post_thumbnail_id( $post->ID );
+              $url_img = wp_get_attachment_url( $thumbID );
+              
+            ?>
+            <div class="col-md-4 center hover01" style="margin-top: 25px;">
+              <a href="<?php echo get_field('url') ?>" target="_blank">
+                <img class="img-responsive b-r-4" src="<?php echo $url_img ?>">
+              </a>
+            </div>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
     </section> 
 
 
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 105,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
 
-    <section  id="quienes-somos"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
-
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 mr-auto">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Quienes Somos</h2>
-            <hr class="section-heading-spacer">
-            <br><br>
-            <p class="lead">
-            Somos una empresa dedicada al desarrollo de páginas web, tiendas virtuales o también conocidas como  E-commerce con alianzas comerciales que nos permiten brindarle a usted un mayor alcance en sus proyectos, así como también un mejor servicio día a día.
-            </p>
+      $query = new WP_Query( $args );
+    ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php 
+        // Ruta de la imagen destacada (tamaño completo)
+        global $post;
+        $thumbID = get_post_thumbnail_id( $post->ID );
+        $url_img = wp_get_attachment_url( $thumbID );
+        
+      ?>
+      <section  id="quienes-somos"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+        <div class="container">        
+          <div class="row">        
+            <div class="col-lg-12 mr-auto">
+              <div class="clearfix"></div>
+              <h2 class="section-heading"><?php echo $post->post_title ?></h2>
+              <hr class="section-heading-spacer">
+              <br><br>
+              <p class="lead">
+                <?php echo $post->post_content ?> 
+              </p>
+            </div>
+          </div>
+          <div class="row p-t-100">
+            <div class="col-lg-8 center">
+              <div class="col-lg-8 center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="http://localhost/KeySystems/cursoWordpress/wpks-keysystems/wp-content/uploads/2017/09/venezolano-maickel-melamed-filosofia-psicoterapeuta_lprima20160809_0134_33.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="http://localhost/KeySystems/cursoWordpress/wpks-keysystems/wp-content/uploads/2017/09/puramides.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="http://localhost/KeySystems/cursoWordpress/wpks-keysystems/wp-content/uploads/2017/09/bancolombia.jpg" alt="Third slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 center">
+              <img class="img-fluid" src="<?php echo $url_img ?>" alt="">
+            </div>
           </div>
         </div>
-        <div class="row p-t-100">
-          <div class="col-lg-4 center">
-          </div>
-          <div class="col-lg-4 center">
-          </div>
-          <div class="col-lg-4 center">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/cel.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      <!-- /.container -->
-
-    </section>
+      </section>
+      <?php endwhile; wp_reset_postdata(); ?>
 
     <section  id="pensamientos"  class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa3.png');">
       <div class="content-section-b2">
@@ -201,66 +344,88 @@
         </div>
       <div>
     </section>
+    
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 107,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
 
-    <section  id="importancia"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+      $query = new WP_Query( $args );
+    ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php 
+        // Ruta de la imagen destacada (tamaño completo)
+        global $post;
+        $thumbID = get_post_thumbnail_id( $post->ID );
+        $url_img = wp_get_attachment_url( $thumbID );
+        
+      ?>
+      <section  id="importancia"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
-      <div class="container">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-lg-3 center">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/iphone-png-14.png" alt="">
-          </div>
-          <div class="col-lg-9 mr-auto">
-            <div class="clearfix"></div>
-            <h2 class="section-heading">Importancia de una web</h2>
-            <hr class="section-heading-spacer">
-            <br><br>
-            <p class="lead">
-            Al no tener un sitio web estas fuera del mayor medio de comunicación, tu producto pierde alcance geográfico y no promueves la comunicación con los clientes y proveedores. Poseer una página digital para tu negocio brinda infinidades de ventajas: bajos costos por publicidad, presentar una imagen profesional, ahorro de dinero en impresión y distribución de publicidad, vender y promover sus servicios y productos en línea, entre muchas otras más.
-            Los usuarios aprecian la calidad y la credibilidad. Esto quiere decir que si ven un sitio con contenido de calidad van a perdonar la presencia de publicidad y/o un diseño pobre. Este es el motivo por el que sitios web no tan bien diseñados pero con contenido de alta calidad ganan mucho tráfico con los años.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- /.container -->
-
-    </section>
-
-    <section id="contacto" class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa4.png');">
-      <div class="content-section-b2">
-        <div class="container p-t-b-70">
           <div class="row">
-            <div class="col-lg-12 ml-auto">
-              <div class="clearfix"></div>
-              <h2 class="section-heading white">Contactanos</h2>
-              <hr class="section-heading-spacer-2">
-              <br><br>
-              <p class="lead white">Recibirás nuestro contacto mediante correo electrónico o directamente a tu teléfono de contacto en un lapso de 24 a 48 Horas, agradeciendo su interés por conocer nuestros servicios.</p>
+            <div class="col-lg-3 center">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/html_template/img/iphone-png-14.png" alt="">
             </div>
-            <div class="col-lg-12 ml-auto p-t-50">
-              <div class="row">
-                <div class="col-md-6 p-top-10">
-                  <input type="email" class="form-control" placeholder="Your name">
-                </div>
-                <div class="col-md-6 p-top-10">
-                  <input type="email" class="form-control" placeholder="Your Email">
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-md-12">
-                  <textarea class="form-control" rows="8" placeholder="Your Message"></textarea>
-                </div>  
-              </div>
+            <div class="col-lg-9 mr-auto">
+              <div class="clearfix"></div>
+              <h2 class="section-heading"><?php echo $post->post_title ?></h2>
+              <hr class="section-heading-spacer">
               <br><br>
-                <div class="center">
-                  <button type="button" class="btn btn-default btn-color">Enviar</button>
-                </div>  
+              <p class="lead">
+                <?php echo $post->post_content ?>
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+        <!-- /.container -->
 
+      </section>
+    <?php endwhile; wp_reset_postdata(); ?>
+    
+
+    <?php 
+      $args = array(      
+        //Type & Status Parameters
+        'p' => 109,
+        'post_type'   => 'landing',
+        'post_status' => 'publish',      
+      );
+
+      $query = new WP_Query( $args );
+    ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php 
+        // Ruta de la imagen destacada (tamaño completo)
+        global $post;
+        $thumbID = get_post_thumbnail_id( $post->ID );
+        $url_img = wp_get_attachment_url( $thumbID );
+        
+      ?>
+      <section id="contacto" class="content-section-b2" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/capa4.png');">
+        <div class="content-section-b2">
+          <div class="container p-t-b-70">
+            <div class="row">
+              <div class="col-lg-12 ml-auto">
+                <div class="clearfix"></div>
+                <h2 class="section-heading white"><?php echo $post->post_title ?></h2>
+                <hr class="section-heading-spacer-2">
+                <br><br>
+                <p class="lead white">
+                  <?php echo $post->post_content ?>
+                </p>
+              </div>
+              <div class="col-lg-12 ml-auto p-t-50">
+                <?php echo do_shortcode('[contact-form-7 id="48" title="Contacto"]'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <?php endwhile; wp_reset_postdata(); ?>
 
 <?php get_footer(); ?>
