@@ -489,4 +489,5 @@ function change_graphic_lib($array) {
 }
 
 add_filter( 'wp_image_editors', 'change_graphic_lib' );
+
 ?>

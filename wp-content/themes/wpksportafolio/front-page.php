@@ -17,11 +17,11 @@
         $thumbID = get_post_thumbnail_id( $post->ID );
         $url_img = wp_get_attachment_url( $thumbID );              
       ?>
-      <section id="inicio">            
+      <section id="inicio" class="content-section-a">            
         <div class="container">
           <div class="row">            
             <div class="col-lg-4 ml-auto">
-              <div class="clearfix"></div>  lass="content-section-a"
+              <div class="clearfix"></div>  
               <h1 class="section-heading"><?php echo $post->post_title ?></h1>
               <hr class="section-heading-spacer">
               <br><br>
