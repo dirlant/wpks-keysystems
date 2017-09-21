@@ -36,13 +36,15 @@
     <?php endwhile; wp_reset_postdata(); ?>
 
 
-    <section class="container">
+    <section id="descargar" class="content-section-b p-t-b-70">
       <br>
-      <div class="row justify-content-md-center">
-        <p class="lead">Descarga tu primera <b>Página  Web</b> completamnte <b>GRATIS!</b> el enlace llegará a tu correo</p>
-        
-        <div class="col-lg-10 ">
-          <?php echo do_shortcode('[contact-form-7 id="59" title="Descarga de tema"]' ); ?>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <p class="lead">Descarga tu primera <b>Página  Web</b> completamnte <b>GRATIS!</b> el enlace llegará a tu correo</p>
+          
+          <div class="col-lg-10 ">
+            <?php echo do_shortcode('[contact-form-7 id="59" title="Descarga de tema"]' ); ?>
+          </div>
         </div>
       </div>
     </section>
@@ -64,7 +66,7 @@
       $thumbID = get_post_thumbnail_id( $post->ID );
       $url_img = wp_get_attachment_url( $thumbID );              
     ?>
-      <section  id="estilo"   class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+      <section  id="estilo"   class="content-section-b p-t-b-70" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
 
         <div class="container">
           <div class="row">          
@@ -194,7 +196,7 @@
 
 
 
-    <section id="temas" class="content-section-b" >
+    <section id="temas" class="content-section-b p-t-b-70" >
       <div class="container">
         <div class="row">
           <?php 
@@ -269,7 +271,7 @@
         $url_img = wp_get_attachment_url( $thumbID );
         
       ?>
-      <section  id="quienes-somos"  class="content-section-b" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
+      <section  id="quienes-somos"  class="content-section-b p-t-b-70" style="background: url('<?php echo get_template_directory_uri()?>/html_template/img/lineas.png');">
         <div class="container">        
           <div class="row">        
             <div class="col-lg-12 mr-auto">

@@ -9,7 +9,9 @@
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
-
+a:hover {
+  text-decoration: none;
+}
 a > i{
 	color: #FFFFFF;
 }
@@ -77,3 +79,4 @@ div.wpcf7-mail-sent-ok {
   border-radius: 5px;
   padding: 10px 0px;
 }
+

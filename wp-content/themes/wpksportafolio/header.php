@@ -26,7 +26,7 @@
     <link href="<?php echo get_template_directory_uri()?>/html_template/css/landing-page.css" rel="stylesheet">
 
     <!-- Style -->
-    <link href="<?php echo get_template_directory_uri()?>/html_template/css/cd.css" rel="stylesheet">
+    <!--<link href="<?php echo get_template_directory_uri()?>/html_template/css/cd.css" rel="stylesheet">-->
     <link href="<?php echo get_template_directory_uri()?>/html_template/css/style.css" rel="stylesheet">
 
     <!-- Custom styles for WordPress implementation -->
@@ -34,8 +34,33 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <!--<a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>-->
+      <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+      <?php
+      $args = array(
+        'theme_location' => 'header-menu',
+        'menu_class' => 'navbar-nav',
+        'menu_id' => 'header-menu',
+        'depth' => 0,
+        'container' => 'ul',
+        'container_id' => 'top-nav',
+        'container_class' => 'navbar-nav',
+        'before' => '<li class="nav-item text-uppercase">',
+        'after' => '</li>',
+        'link_before' => '<span class="nav-link">',
+        'link_after' => '</span>',
+        'walker'  => new BootstrapNavMenuWalker()
+        );
+        wp_nav_menu($args);
+      ?>
+      </div>
+    </nav>
 
-
+    <!--
 		<nav class="cd-stretchy-nav">
       <a class="cd-nav-trigger" href="#0">
         <span aria-hidden="true"></span>
@@ -89,7 +114,7 @@
       </ul>
       <span aria-hidden="true" class="stretchy-nav-bg"></span>
     </nav>
-    <!-- Header
+     Header
     <header class="intro-header">
       <div class="container">
         <div class="intro-message">
